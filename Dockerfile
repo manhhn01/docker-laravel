@@ -31,10 +31,4 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -m -s /bin/bash -g www www
 
-COPY --chown=www:www . /var/www/
-
 USER www
-
-# Expose port 9000 and start php-fpm server
-EXPOSE 9000
-CMD ["php-fpm"]
